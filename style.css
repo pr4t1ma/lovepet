@@ -1,0 +1,166 @@
+:root {
+  --background-primary: #c39267cf;
+  --white: #fff;
+  --background-secondary: #123c69;
+  --green: #358597;
+}
+body {
+  color: #fff;
+  padding: 0;
+  margin: 0;
+}
+a.button,
+button.button {
+  border: 2px solid #d3b79b;
+  padding: 10px 25px;
+  text-align: center;
+  background: none;
+  color: var(--white);
+  font-size: bold;
+}
+
+button.button {
+  padding: 10px 20px;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--white);
+}
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  background-image: url(images/banner1.jpg);
+  background: no-repete;
+  height: 700px;
+  background-position: center;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-primary);
+  width: 100%;
+  background-size: cover;
+  color: var(--white);
+}
+
+.container-wrapper {
+  max-width: 1060px;
+  margin: 0 auto;
+}
+
+.header {
+  padding: 15px;
+  display: block;
+
+  top: 0;
+  background: rgb;
+}
+
+.header-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.header-wrapper.lower {
+  justify-content: center;
+  margin: 60px 0;
+}
+
+.header-wrapper.upper {
+  margin-bottom: 25px;
+}
+
+.call-us i,
+.calender i {
+  font-size: 20px;
+  padding: 0 10px;
+}
+
+.logo {
+  width: 100px;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+}
+
+.menu ul {
+  border-top: 4px solid #dbc0c0;
+  margin-right: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu ul li {
+  padding: 20px 0;
+}
+
+.menu a {
+  padding: 1rem;
+}
+
+.menu a:hover {
+  border-top: 4px solid red;
+  transition: 0.5s;
+  text-shadow: 1px 1px 1px black;
+}
+
+.search button.button {
+  border: none;
+}
+
+.banner {
+  max-width: 550px;
+}
+
+.banner h3 {
+  margin: 0;
+  padding: 0;
+  color: #fee6c5;
+  line-height: 1.5;
+  font-size: 25px;
+}
+.banner button.button {
+  text-transform: uppercase;
+  margin: 30px 0;
+}
+
+@media (max-width: 499px) {
+  .header-wrapper {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .logo {
+    width: 10 0px;
+  }
+
+  .calender {
+    display: block;
+  }
+  .header-wrapper {
+    gap: 27px;
+    justify-content: flex-start;
+  }
+  .menu ul li {
+    display: none;
+  }
+  .menu a.button {
+    width: 100%;
+  }
+}
