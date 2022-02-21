@@ -137,11 +137,49 @@ img {
   text-transform: uppercase;
   margin: 30px 0;
 }
+.card {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  top: -100px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.card-text {
+  width: 50%;
+  background-repeat: no-repeat;
+  color: #916f5a;
+  padding: 0px;
+  font-size: 15px;
+  line-height: 1.2rem;
+}
+
+.overlay {
+  background: rgb(249 249 249);
+  border-radius: 20px 0 0 20px;
+  padding: 20px;
+}
+
+.card.img {
+  width: 50%;
+}
 
 @media (max-width: 499px) {
   .header-wrapper {
-    flex-direction: column;
-    gap: 1rem;
+    justify-content: space-between;
+  }
+
+  .logo {
+    width: 60px;
+  }
+  .call-us a.button span,
+  .calender a.button span {
+    display: none;
+  }
+  .call-us a.button,
+  .calender a.button {
+    border: none;
   }
 }
 
@@ -153,7 +191,7 @@ img {
   .calender {
     display: block;
   }
-  .header-wrapper {
+  .header-wrapper.lower {
     gap: 27px;
     justify-content: flex-start;
   }
