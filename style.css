@@ -41,7 +41,7 @@ button.button {
 }
 
 .button:hover {
-  background: #ba5d30;
+  background: rgba(95, 49, 19, 0.5);
 }
 
 button.button {
@@ -166,7 +166,7 @@ img {
 }
 
 .card {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
   position: relative;
   top: -100px;
@@ -186,7 +186,7 @@ img {
 .overlay {
   background: rgb(249 249 249);
   border-radius: 20px 0 0 20px;
-  padding: 20px;
+  padding: 2rem;
 }
 
 .overlay h3 {
@@ -461,6 +461,7 @@ img {
   .calender {
     display: block;
   }
+
   .header-wrapper.lower {
     gap: 27px;
     justify-content: flex-start;
@@ -476,6 +477,7 @@ img {
   .menu ul li {
     display: none;
   }
+
   .menu a.button {
     width: 100%;
   }
