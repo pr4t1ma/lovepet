@@ -1,9 +1,15 @@
 :root {
   --background-primary: #c39267cf;
   --white: #fff;
-  --background-secondary: #123c69;
+  --background-secondary: #7c222a;
   --green: #358597;
+  --space-sm: 1rem;
 }
+
+.margin-sm {
+  margin: var(--space-sm);
+}
+
 h3,
 h4 {
   font-size: 1.5rem;
@@ -32,6 +38,10 @@ button.button {
   background: none;
   color: var(--white);
   font-size: bold;
+}
+
+.button:hover {
+  background: #ba5d30;
 }
 
 button.button {
@@ -149,10 +159,12 @@ img {
   line-height: 1.5;
   font-size: 25px;
 }
+
 .banner button.button {
   text-transform: uppercase;
   margin: 30px 0;
 }
+
 .card {
   max-width: 800px;
   margin: 0 auto;
@@ -176,6 +188,7 @@ img {
   border-radius: 20px 0 0 20px;
   padding: 20px;
 }
+
 .overlay h3 {
   font-size: 1rem;
 }
@@ -185,7 +198,7 @@ img {
 }
 
 .offer {
-  background: #358597;
+  background: var(--background-secondary);
   margin: 50px 0;
 }
 
@@ -205,7 +218,6 @@ img {
   max-width: 1060px;
   margin: 0 auto;
   padding: 20px;
-
   font-size: 15px;
 }
 
@@ -228,18 +240,17 @@ img {
 .categories {
   background-image: url(images/background-1.jpg);
   background-repeat: no-repeat;
-  height: 600px;
   background-size: cover;
   position: relative;
 }
 
 .categories-overlay {
   position: absolute;
-  background: #358597;
+  background: var(--background-secondary);
   top: 0;
   right: 0;
   width: 100%;
-  height: 600px;
+  height: 100%;
   opacity: 0.45;
 }
 
@@ -250,12 +261,14 @@ img {
   font-size: bold;
   position: relative;
   z-index: 1;
+  text-align: center;
 }
 
 .category-wrapper .title h3 {
   text-align: center;
   font-size: 1rem;
 }
+
 .category-wrapper .title {
   margin: 10px 60px;
 }
@@ -263,11 +276,13 @@ img {
 .category-list {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .category {
-  max-width: 22.5%;
+  flex-basis: 22.5%;
   display: flex;
+
   flex-direction: column;
   flex-basis: 22.5%;
   align-items: center;
@@ -293,6 +308,7 @@ img {
 
 .category p {
   text-align: center;
+  max-width: 250px;
   font-size: 14px;
 }
 
@@ -380,19 +396,19 @@ img {
 }
 
 .card.reverse {
-  transform: rotateY(180deg);
+  flex-direction: row-reverse;
   position: relative;
-  top: 5px;
+  top: 30px;
 }
 
-.card-text.reverse {
-  transform: rotateY(180deg);
+.card.reverse .overlay {
+  border-radius: 0 20px 20px 0;
 }
 
 .footer {
-  background: #358597;
+  background: var(--background-secondary);
   margin: 0;
-  padding: 0;
+  padding-top: 60px;
 }
 
 .footer-wrapper {
@@ -435,26 +451,9 @@ img {
 .footer-end p {
   text-align: center;
 }
+/* media quary start for phone from here */
 
-@media (max-width: 499px) {
-  .header-wrapper {
-    justify-content: space-between;
-  }
-
-  .logo {
-    width: 60px;
-  }
-  .call-us a.button span,
-  .calender a.button span {
-    display: none;
-  }
-  .call-us a.button,
-  .calender a.button {
-    border: none;
-  }
-}
-
-@media (max-width: 500px) {
+@media (max-width: 900px) {
   .logo {
     width: 10 0px;
   }
@@ -466,10 +465,103 @@ img {
     gap: 27px;
     justify-content: flex-start;
   }
+
+  .category {
+    flex-basis: 32%;
+    gap: 2%;
+  }
+}
+
+@media (max-width: 700px) {
   .menu ul li {
     display: none;
   }
   .menu a.button {
     width: 100%;
   }
+
+  body {
+    font-size: 12px;
+  }
+  .header-wrapper {
+    justify-content: space-between;
+  }
+
+  .banner {
+    padding: 0 20px;
+  }
+
+  .banner h1 {
+    font-size: 1rem;
+  }
+
+  .banner h3 {
+    font-size: 0.85rem;
+  }
+
+  .card,
+  .card.reverse {
+    display: block;
+    position: unset;
+  }
+  .card-text {
+    min-width: 100%;
+  }
+
+  .offer {
+    margin: 0;
+  }
+  .offer h3 {
+    text-align: center;
+    line-height: 1.5rem;
+    font-size: 0.8rem;
+  }
+
+  .category-wrapper .title {
+    margin: 0;
+  }
+
+  .category-wrapper .title h3 {
+    font-size: 0.85rem;
+  }
+  .categories {
+    height: auto;
+  }
+  .category {
+    flex-basis: 50%;
+  }
+
+  .category h4 {
+    font-size: 0.75rem;
+  }
+
+  .logo {
+    width: 60px;
+  }
+  .footer {
+    padding: 10px;
+  }
+
+  .footer-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2%;
+  }
+
+  .call-us a.button span,
+  .calender a.button span {
+    display: none;
+  }
+  .call-us a.button,
+  .calender a.button {
+    border: none;
+  }
 }
+
+@media (max-width: 400px) {
+  .category {
+    flex-basis: 100%;
+    gap: 2%;
+  }
+}
+/* mediaquary end here for phone */
