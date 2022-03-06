@@ -6,10 +6,6 @@
   --space-sm: 1rem;
 }
 
-.margin-sm {
-  margin: var(--space-sm);
-}
-
 h3,
 h4 {
   font-size: 1.5rem;
@@ -23,37 +19,6 @@ body {
   margin: 0;
 }
 
-a.button.center {
-  align-items: center;
-  width: 200px;
-  margin: 30px auto;
-  display: block;
-}
-
-a.button,
-button.button {
-  border: 2px solid #d3b79b;
-  padding: 10px 25px;
-  text-align: center;
-  background: none;
-  color: var(--white);
-  font-size: bold;
-}
-
-.button:hover {
-  background: rgba(95, 49, 19, 0.5);
-}
-
-button.button {
-  padding: 10px 20px;
-}
-
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
 a {
   text-decoration: none;
   color: var(--white);
@@ -63,9 +28,41 @@ img {
   max-width: 100%;
 }
 
-.container {
+.margin-sm {
+  margin: var(--space-sm);
+}
+
+a.button,
+button.button {
+  border: 2px solid #d3b79b;
+  padding: 10px 20px;
+  text-align: center;
+  background: rgba(95, 49, 19, 0.9);
+  color: var(--white);
+  font-size: bold;
+}
+
+a.button--center,
+button.button--center {
+  align-items: center;
+  width: 200px;
+  margin: 30px auto;
+  display: block;
+}
+
+.button:hover {
+  background: rgba(95, 49, 19, 0.8);
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header-banner {
   background-image: url(images/banner1.jpg);
-  background: no-repete;
+  background-repeat: no-repeat;
   height: 700px;
   background-position: center;
   margin: 0;
@@ -74,20 +71,44 @@ img {
   width: 100%;
   background-size: cover;
   color: var(--white);
+  position: relative;
+}
+
+.header-banner::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(95, 49, 19, 0.3);
+  z-index: 0;
+}
+
+.header-banner--about::before {
+  background: rgba(205, 249, 119, 0.3);
 }
 
 .container-wrapper,
 .offer-wrapper {
   max-width: 1060px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .header {
   padding: 15px;
   display: block;
-
   top: 0;
-  background: rgb;
+}
+
+.header .button {
+  background: rgba(95, 49, 19, 0.3);
+}
+.header .button:hover {
+  background: rgba(95, 49, 19, 0.4);
 }
 
 .header-wrapper {
@@ -211,7 +232,8 @@ img {
   font-size: 1.5rem;
 }
 
-.about-us {
+.about-us,
+.text {
   color: #504b4b;
   background: rgb(249 249 249);
   box-shadow: 3px 2px 2px 4px rgb(245 239 239);
@@ -451,6 +473,72 @@ img {
 .footer-end p {
   text-align: center;
 }
+
+/* about page css start from here */
+.header-banner--about {
+  background-image: url(images/about.jpg);
+}
+
+.about .header {
+  color: red;
+}
+
+.banner-text {
+  opacity: 0.8;
+}
+
+.ours-teams {
+  max-width: 1060px;
+  margin: 40px auto;
+}
+
+.intro {
+  text-align: center;
+}
+
+.team-des {
+  padding: 40px;
+  color: #504b4b;
+  background: rgb(249 249 249);
+  box-shadow: 3px 2px 2px 4px rgb(245 239 239);
+  flex-basis: 50%;
+}
+
+.team {
+  display: flex;
+  flex-basis: 50%;
+}
+
+/* Team member card */
+.team-member-card {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.team-member-card__img {
+  grid-column: 1/7;
+  grid-row: 1;
+}
+
+.team-member-card__desc {
+  grid-column: 6/-1;
+  grid-row: 1;
+  color: #000;
+}
+/* Intro */
+.team-member-card__text {
+  background: #7c222a;
+  padding: 11px 39px;
+  line-height: 1.5rem;
+  font-size: 16px;
+  color: #edeae8;
+  /* opacity: 0.8; */
+  margin: 20px 0;
+}
+
+/* about page css End from here */
 /* media quary start for phone from here */
 
 @media (max-width: 900px) {
@@ -460,11 +548,6 @@ img {
 
   .calender {
     display: block;
-  }
-
-  .header-wrapper.lower {
-    gap: 27px;
-    justify-content: flex-start;
   }
 
   .category {
